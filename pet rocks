@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual Pet Rock</title>
+  <style>
+    #petRock {
+      width: 200px;
+      height: 200px;
+      background-image: url('rock.jpg');
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+
+<div id="petRock"></div>
+<button onclick="feedPetRock()">Feed</button>
+<button onclick="dressUpPetRock()">Dress Up</button>
+
+<script>
+  let hungerLevel = 0;
+
+  function feedPetRock() {
+    hungerLevel--;
+    if (hungerLevel < 0) {
+      hungerLevel = 0;
+    }
+    updatePetRock();
+  }
+
+  function dressUpPetRock() {
+    // Add code here to dress up the pet rock (e.g., change its background image)
+  }
+
+  function updatePetRock() {
+    let petRockDiv = document.getElementById('petRock');
+    // Update pet rock appearance based on hunger level
+    if (hungerLevel === 0) {
+      petRockDiv.style.backgroundColor = 'green'; // Example change when not hungry
+    } else {
+      petRockDiv.style.backgroundColor = 'brown'; // Example change when hungry
+    }
+  }
+</script>
+
+</body>
+</html>
